@@ -7,7 +7,7 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     username = models.CharField(max_length=50, null=False, unique=True)
     rut = models.CharField(max_length=50,  null=True)
-    email = models.EmailField(max_length=254,  null=True,  unique=True)
+    email = models.EmailField(max_length=254,  null=False,  unique=True, )
     phone = models.CharField(max_length=15, null=True)
     birthday = models.DateField(null=True)
     created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
@@ -18,3 +18,5 @@ class User(AbstractUser):
     #     self.username = self.email
     #     super().save(*args, **kwargs)
 
+    # def __str__(self):
+    #     return self.username
