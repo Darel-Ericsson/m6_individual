@@ -4,8 +4,33 @@
 
 {% block content %}
 
-<h1>Hola mundo</h1>
-<p>Esta es mi landing page</p>
-
+<div class="container mt-3">
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+        <thead class="table-secondary">
+            <tr>
+                <th scope="col">Nombre de usuario</th>
+                <th scope="col">RUT</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo Electrónico</th>
+                <th scope="col">Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{user.username}}</td>
+                <td>{{user.rut}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    
+    </table>
+</div>
 
 {% endblock content %}
