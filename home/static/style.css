@@ -10,3 +10,7 @@ body {
     background-size: cover;
     background-position: bottom;
 }
+
+.section-title {
+    color: rgb(28, 39, 76);
+}
