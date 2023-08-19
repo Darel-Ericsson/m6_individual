@@ -1,11 +1,13 @@
 {% extends '../layouts/base.html' %}
+{% load static %}
 
 {% block title %}Yo quiero otro mundo{% endblock title %}
 
 {% block content %}
 
 <div class="container mt-3">
-    <h1>Usuarios</h1>
+    
+    <h1 class="align-text-bottom"><img src="{% static 'users-icon.svg'%}" width="40" height="40"> Usuarios</h1>
     <table class="table table-striped">
         <thead class="table-secondary">
             <tr>
