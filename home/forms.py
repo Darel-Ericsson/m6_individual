@@ -12,3 +12,9 @@ class UserForm(forms.ModelForm):
                   'Email':'email',
                   'Teléfono':'phone',
                   'Nacimiento':'birthday'}
+        # extra_fields = ['field']
+
+    def __init__(self, *args, **kwargs): #añadir clases a los campos del form
+        super(UserForm, self).__init__(*args, **kwargs)
+        for field_name in self.fields:
+            self.fields[field_name].widget.attrs['class'] = 'form-control'

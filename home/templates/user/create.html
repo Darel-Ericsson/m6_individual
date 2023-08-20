@@ -13,7 +13,13 @@
             <h1 class="align-middle section-title"><img class="m-0 py-0" src="{% static 'users-icon.svg'%}" width="40" height="40">Crear nuevo usuario</h1>
         </div>
         <div class="card-body bg-opacity-25 p-4">
-                {{ user_form.as_p }}
+            {% for field in user_form %}
+            <div class="mb-3">
+                <label for="{{field.id_for_label}}" class="form-label">{{field.label}}</label>
+                <p>{{field}}</p>
+                <div id="{{field.name}}Help" class="form-text">{{ field.help_text }}</div>
+            </div>
+            {% endfor %}
             </div>
             <div class="card-footer">
                 <button class="btn btn-primary" type="submit">Enviar</button>
@@ -21,7 +27,6 @@
         </form>
     </div>
 </div>
-
 
 
 {% endblock content %}
