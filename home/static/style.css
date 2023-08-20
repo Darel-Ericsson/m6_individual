@@ -4,13 +4,29 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background-image: url(./background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
+    background-attachment: fixed;
+    
+
 }
 
 .section-title {
     color: rgb(28, 39, 76);
+}
+
+.vhr {
+    border:         none;
+    border-left:    2px solid hsl(206, 5%, 72%);
+    height:         auto;
+    width:          1px; 
+    padding:        0px;
+    margin:         0px;
 }
