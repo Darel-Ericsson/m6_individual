@@ -8,8 +8,19 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="ms-auto bg-secondary bg-opacity-25 rounded p-0 m-0">
+            <div class="ms-auto me-2 text-white">
+                {% if user.is_authenticated %}
+                <div class="bg-secondary bg-opacity-25 p-2 rounded">
+                    Bienvenido
+                        {% if user.first_name != "" %} {{user.first_name}} {{user.last_name}}
+                        {% else %} {{user.username}}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class=" bg-secondary bg-opacity-25 rounded p-0 m-0">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">Inicio</a>
