@@ -26,12 +26,12 @@
                     {% elif user.is_authenticated %}
                     <hr class="vhr">
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Log Out</a>
+                    <a class="nav-link" href="{% url 'home:signout' %}">Log Out</a>
                     </li>
                     {% else %}
                     <hr class="vhr">
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:login' %}">Log In</a>
+                    <a class="nav-link" href="{% url 'home:signin' %}">Log In</a>
                     </li>
                     {% endif %}
                 </ul>
