@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 
 from .models import User
 from .forms import UserForm 
@@ -32,11 +33,13 @@ def signout(request):
     context = {'form': signup_form}
     return render(request, 'signup.html', context) """
 
+@login_required
 def user_list(request):
     users = User.objects.all()
     context = {'users': users}
     return render(request, "user/index.html", context)
 
+@login_required
 def user_create(request):
     if request.method == 'GET':
         user_form = UserForm()
@@ -45,6 +48,7 @@ def user_create(request):
     else:
         return HttpResponse('Método no soportado')
 
+@login_required
 def user_store(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)

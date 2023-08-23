@@ -9,6 +9,7 @@
         <li class="nav-item">
             <a href="{% url 'home:home' %}" class="nav-link px-2 text-body-secondary">Inicio</a>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item">
             <a href="{% url 'home:users' %}" class="nav-link px-2 text-body-secondary">Usuarios</a>
         </li>
@@ -16,7 +17,7 @@
         <li class="nav-item">
             <a href="{% url 'admin:index' %}" class="nav-link px-2 text-body-secondary">Administración</a>
         </li>
-        {% elif user.is_authenticated %}
+        {% endif %}
         <li class="nav-item">
             <a href="{% url 'home:signout' %}" class="nav-link px-2 text-body-secondary">Log Out</a>
         </li>
